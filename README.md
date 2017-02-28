@@ -49,6 +49,7 @@ Ctrl-c
 Ctrl-c
 </pre>
 This will tear down all subprocesses startet by tailAll.sh through a _trap_.
+
 <h1>Misc</h1>
 The _logs_ folder is your responsibility to clean up after your own needs. tailAll.sh will simply append to existing files or create new log files for the containers that have no existing logs.<br>
 You will need to wait a few seconds between starting tailAll.sh and plot.sh so that the log files have some content...
