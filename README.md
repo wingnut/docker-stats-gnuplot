@@ -6,7 +6,7 @@ docker stats
 </pre>
 every 10s and persists the result to disk under a subfolder: logs
 
-<h1>How to get started on macOS...</h1>
+<h1>How to get started from a macOS terminal...</h1>
 1. Install gnuplot
 <pre>
 brew install gnuplot --with-aquaterm --with-qt
@@ -32,3 +32,9 @@ mkdir logs
 ./tailAll.sh
 </pre>
 The script will spawn one _docker stats_ loop subprocess per container found in an call and continue to output the results to the respective log file (each log file is named after the corresponding container name).
+
+6. Open a new terminal window/tab and start plotting __either__ CPU or Memory
+<pre>
+./plot.sh CPU
+./plot.sh MEM
+</pre>
