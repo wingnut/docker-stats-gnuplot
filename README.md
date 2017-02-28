@@ -26,3 +26,9 @@ cd docker-stats-gnuplot
 <pre>
 mkdir logs
 </pre>
+
+5. Start tailing docker stats
+<pre>
+./tailAll.sh
+</pre>
+The script will spawn one _docker stats_ loop subprocess per container found in an call and continue to output the results to the respective log file (each log file is named after the corresponding container name).
