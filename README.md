@@ -44,9 +44,11 @@ The script will spawn one _docker stats_ loop subprocess per container found in 
 <pre>
 Ctrl-c
 </pre>
-1. In the tab(s) for tailAll.sh:
+1. In the tab for tailAll.sh:
 <pre>
 Ctrl-c
 </pre>
+This will tear down all subprocesses startet by tailAll.sh through a _trap_.
+<h1>Misc</h1>
 The _logs_ folder is your responsibility to clean up after your own needs. tailAll.sh will simply append to existing files or create new log files for the containers that have no existing logs.<br>
 You will need to wait a few seconds between starting tailAll.sh and plot.sh so that the log files have some content...
