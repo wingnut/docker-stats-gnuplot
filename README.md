@@ -38,3 +38,13 @@ The script will spawn one _docker stats_ loop subprocess per container found in 
 ./plot.sh CPU
 ./plot.sh MEM
 </pre>
+
+<h1>Shutting down</h1>
+1. In the tab(s) for plot.sh (NOTE: gnuplot steals focus on each run so you'll have to time it right):
+<pre>
+Ctrl-c
+</pre>
+1. In the tab(s) for tailAll.sh:
+<pre>
+Ctrl-c
+</pre>
