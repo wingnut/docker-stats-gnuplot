@@ -4,7 +4,7 @@ The scripts run
 <pre>
 docker stats
 </pre>
-every 10s and persists the result to disk under a subfolder: logs
+every 10s and persist the result to disk under a subfolder: logs
 
 <h1>How to get started from a macOS terminal...</h1>
 1. Install gnuplot
