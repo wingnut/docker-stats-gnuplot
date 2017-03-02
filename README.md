@@ -27,11 +27,13 @@ cd docker-stats-gnuplot
 mkdir logs
 </pre>
 
-5. Start tailing docker stats
+5. Start tailing docker stats for all containers (except the one explicitly skipped in the script (system containers for Docker for AWS))
 <pre>
 ./tailAll.sh
+OR
+./tailContainer.sh <container name>
 </pre>
-The script will spawn one _docker stats_ loop subprocess per container found in an call and continue to output the results to the respective log file (each log file is named after the corresponding container name).
+The tailAll script create one log file per container found in the first call and continue to output the results to the respective log file (each log file is named after the corresponding container name). The tailContainer requiers a container name. Either look it up explicitly through a _docker stats_ call yourself or use the tailAll script for a few seconds and look through the generated _containerNames.txt_
 
 6. Open a new terminal window/tab and start plotting __either__ CPU or Memory
 <pre>
