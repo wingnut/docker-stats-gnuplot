@@ -53,5 +53,5 @@ This will tear down all subprocesses startet by tailAll.sh through a _trap_.
 <h1>Misc</h1>
 The _logs_ folder is your responsibility to clean up after your own needs. tailAll.sh will simply append to existing files or create new log files for the containers that have no existing logs.<br>
 You will need to wait a few seconds between starting tailAll.sh and plot.sh so that the log files have some content, see typical error when there's little or too little data collected:<br>
-_Warning: empty x range [1.48845e+09:1.48845e+09], adjusting to [1.47356e+09:1.50333e+09]
+_Warning: empty x range [1.48845e+09:1.48845e+09], adjusting to [1.47356e+09:1.50333e+09]<br>
 Warning: empty y range [0.69:0.69], adjusting to [0.6831:0.6969]_
