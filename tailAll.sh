@@ -3,22 +3,24 @@
 # Get all container names
 docker stats --no-stream --format "{{.Name}}" > containerNames.txt
 
-while read containerName; do
-	if [[ ${containerName} != *"-aws"* ]];then
-    	./tailContainer.sh ${containerName} &
-	fi
-done < containerNames.txt
+while true; do
+	# Collect docker stats output
+	statsOutput=$(docker stats --no-stream --format "{{.Name}},{{.CPUPerc}},{{.MemPerc}}")
+	statsDate=$(date +%Y-%m-%dT%H:%M:%S)
 
-# Kill all spawned subprocesses on exit (Ctrl-C)
-function handle_sigint()
-{
-    for proc in `jobs -p`
-    do
-        kill $proc
-    done
-}
+	while read containerName; do
+		# Skip AWS system containers
+		if [[ ${containerName} != *"-aws"* ]];then
+	    	verboseRowStats=$(echo "${statsOutput}" | grep "${containerName}" | tr -d '%')
+	    	# Remove first column from string
+	    	stringToRemove="${containerName},"
+	    	rowStats="${verboseRowStats/$stringToRemove/}"
+	    	echo $statsDate,$rowStats >> ./logs/${containerName}.log
+		fi
+	done < containerNames.txt
 
-trap handle_sigint SIGINT
+	sleep 5
+done
 
-wait
+
 
