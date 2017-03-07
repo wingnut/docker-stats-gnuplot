@@ -6,5 +6,5 @@ set xdata time
 set timefmt '%Y-%m-%dT%H:%M:%S'
 set for [i=1:words(fileNames)] linetype i dashtype i linewidth 2
 plot for [file in fileNames] file using 1:col with lines title file
-pause 5
+pause 10
 reread
